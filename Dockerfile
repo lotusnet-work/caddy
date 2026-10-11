@@ -3,7 +3,10 @@ FROM caddy:builder AS builder
 RUN xcaddy build \
     --with github.com/dulli/caddy-wol \
     --with github.com/caddy-dns/cloudflare \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip
+    --with github.com/WeidiDeng/caddy-cloudflare-ip \
+    --with github.com/hslatman/caddy-crowdsec-bouncer/http@main \
+    --with github.com/hslatman/caddy-crowdsec-bouncer/appsec@main \
+    --with github.com/hslatman/caddy-crowdsec-bouncer/layer4@main
 
 FROM caddy:2.8.4
 
